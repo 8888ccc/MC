@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>网页MC导航 - 在线玩我的世界</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="container">
+  <header>
+    <div class="logo-icon">⛏️</div>
+    <h1>网页MC导航站</h1>
+    <p class="subtitle">浏览器里直接玩我的世界 · 无需下载 · 点开即玩</p>
+    <span class="tagline">🎮 选择适合你的版本开始游戏</span>
+  </header>
+
+  <!-- 版本选择 -->
+  <div class="version-grid">
+
+    <div class="version-card js">
+      <span class="version-badge">标准版本</span>
+      <div class="version-icon">📜</div>
+      <h2>JavaScript 版</h2>
+      <p>兼容性最好的标准版本，所有浏览器都能流畅运行，基于 TeaVM 编译。</p>
+      <ul class="version-features">
+        <li>兼容所有现代浏览器</li>
+        <li>加载速度快，无需额外支持</li>
+        <li>单人生存 / 创造模式</li>
+        <li>支持多人联机服务器</li>
+      </ul>
+      <a href="https://eaglercraft.com/" target="_blank" class="version-btn" onclick="showTip('Eaglercraft JS版', 'https://eaglercraft.com/')">▶ 启动 JS 版</a>
+      <div class="version-note">推荐配置较低的设备使用</div>
+    </div>
+
+    <div class="version-card wasm">
+      <span class="version-badge">性能优先 ⚡</span>
+      <div class="version-icon">🚀</div>
+      <h2>WebAssembly 版</h2>
+      <p>性能更强的 WASM 版本，帧率更高、运行更流畅，适合配置较好的设备。</p>
+      <ul class="version-features">
+        <li>性能提升 2-3 倍</li>
+        <li>更高帧率，更流畅体验</li>
+        <li>更低的 CPU 占用</li>
+        <li>支持大型地图和模组</li>
+      </ul>
+      <a href="https://eaglercraft.com/" target="_blank" class="version-btn" onclick="showTip('Eaglercraft WASM版', 'https://eaglercraft.com/')">▶ 启动 WASM 版</a>
+      <div class="version-note">需要浏览器支持 WebAssembly</div>
+    </div>
+
+  </div>
+
+  <!-- 操作说明 -->
+  <div class="controls-box">
+    <h3>🎮 通用操作说明</h3>
+    <div class="controls-grid">
+      <div class="control-item"><span class="key">W A S D</span><span>移动</span></div>
+      <div class="control-item"><span class="key">鼠标</span><span>控制视角</span></div>
+      <div class="control-item"><span class="key">空格</span><span>跳跃</span></div>
+      <div class="control-item"><span class="key">左键</span><span>破坏方块</span></div>
+      <div class="control-item"><span class="key">右键</span><span>放置方块</span></div>
+      <div class="control-item"><span class="key">E</span><span>打开背包</span></div>
+      <div class="control-item"><span class="key">1-9</span><span>切换物品</span></div>
+      <div class="control-item"><span class="key">ESC</span><span>暂停菜单</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>⛏️ 网页MC导航站 · 本站仅为导航入口，游戏版权归 Mojang Studios 所有</p>
+    <p style="margin-top:10px">建议使用 Chrome / Edge 浏览器获得最佳体验</p>
+  </footer>
+</div>
+
+<!-- 跳转提示弹窗 -->
+<div id="tipModal">
+  <div class="tip-content">
+    <h3 id="tipTitle">即将跳转</h3>
+    <p id="tipText">即将跳转到外部网站，是否继续？</p>
+    <div class="tip-buttons">
+      <button class="tip-btn cancel" onclick="closeTip()">取消</button>
+      <button class="tip-btn confirm" onclick="confirmJump()">确认跳转</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
